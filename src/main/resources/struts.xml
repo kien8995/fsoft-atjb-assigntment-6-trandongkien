@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="bootstrap" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<action name="user-account" class="com.kientran.actions.UserAccountAction">
+			<result name="success">/user-account.jsp</result>
+			<result name="input">/user-account.jsp</result>
+			<result name="trainees" type="redirectAction">trainees</result>
+		</action>
+
+		<action name="trainees" class="com.kientran.actions.TraineeAction">
+			<result name="success">/trainees.jsp</result>
+			<result name="user-account">/user-account.jsp</result>
+		</action>
+
+		<action name="feedbacks" class="com.kientran.actions.FeedbackAction">
+			<result name="success">/feedbacks.jsp</result>
+			<result name="input">/feedbacks.jsp</result>
+		</action>
+	</package>
+
+</struts>

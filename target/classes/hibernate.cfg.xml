@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/trainee_feedback?useSSL=false</property>
+		<property name="hibernate.connection.username">fsoft</property>
+		<property name="hibernate.connection.password">fsoft</property>
+
+		<!-- SQL dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Format SQL -->
+		<property name="format_sql">true</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+
+		<!-- <property name="hibernate.hbm2ddl.auto">create-drop</property> -->
+
+		<!-- class entity -->
+		<mapping class="com.kientran.entities.User" />
+		<mapping class="com.kientran.entities.Feedback" />
+		<mapping class="com.kientran.entities.enums.FeedbackType" />
+		<mapping class="com.kientran.entities.enums.FeedbackRate" />
+
+	</session-factory>
+</hibernate-configuration>
